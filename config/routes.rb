@@ -8,9 +8,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   devise_scope :user do
-    root to: 'users/registrations#new'
+    unauthenticated :user do
+      root 'sessions#new', as: :unauthenticated_root
+    end
+
+    authenticated :user do
+      root 'transactions#index', as: :authenticated_root
+    end
   end
-  
+
+
+  resources :transactions
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20150612014915) do
 
   create_table "transactions", force: true do |t|
-    t.date     "Date"
-    t.string   "Vendor"
-    t.decimal  "Amount",     precision: 2, scale: 0
-    t.string   "Category"
+    t.date     "date"
+    t.string   "vendor"
+    t.decimal  "amount",     precision: 2, scale: 0
+    t.string   "category"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.integer  "user_id"
